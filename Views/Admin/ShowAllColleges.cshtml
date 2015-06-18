@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "ShowAllColleges";
+    Layout = "~/Views/Shared/layout2.cshtml";
+}
+@model List<term_project_ead.Models.College>
+
+
+@using term_project_ead
+<div>
+    
+        
+            <h1 style="color:black; font-size:3em; font-weight:bold; font-family:Georgia; margin-right:1.5em">College Details</h1>
+       
+        
+    
+    <div class="col-lg-12 col-sm-offset-0">
+        <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen; table-layout:fixed;border-bottom-left-radius:15px;
+              border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;border-color:midnightblue">
+
+            <tr><td style="font-size:medium;font-family:Constantia">College List</td>
+                <td style="font-size:medium;font-family:Constantia">Location</td>
+                <td style="font-size:medium;font-family:Constantia">Name</td>
+                <td style="font-size:medium;font-family:Constantia">City</td>
+                <td style="font-size:medium;font-family:Constantia">Category</td>
+                <td style="font-size:medium;font-family:Constantia">Action</td>
+                <td style="font-size:medium;font-family:Constantia">Action</td>
+
+            </tr>
+                
+           
+
+            @foreach (var x in Model)
+            {
+                <tr style="font-size:medium;font-family:Constantia">
+                    <td style="color:black">
+                       Colleges
+                    </td>
+                    <td style="color:black;font-family:Constantia"> @(x.ClgName) </td>
+                    <td style="color:black;font-family:Constantia"> @(x.Location)</td>
+                    <td style="color:black;font-family:Constantia"> @(x.City)</td>
+                    <td style="color:black;font-family:Constantia"> @(x.Category)</td>
+                    <td style="color:black;font-family:Constantia"><a href="~/Admin/UpdateCollege?name=@(x.ClgName)" style="color:salmon">Edit</a></td>
+                    <td style="color:black;font-family:Constantia"> <a href="~/Admin/delete?name=@(x.ClgName)" style="color:salmon">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

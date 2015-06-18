@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Sign_up";
+    Layout = null;
+}
+@model term_project_ead.Models.Admin
+
+    <head>
+        <title>Sign up</title>
+    </head>
+ <body style="background-image:url(../../Content/img/bk6.jpg) ; background-repeat:round" >
+   
+      <h1 class="h1" style="font-size:40px ;  font-family:Constantia; color:wheat; text-align:center"> Admin Panel </h1> 
+
+     <div id="sign_in_data"  class="container" >
+      <div style="border:thick;background-color:rgba(77, 196, 189, 0.86);margin-left:340px;
+       border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-left-radius:15px;height:400px;width:400px;border-top-right-radius:15px;">
+      <p class="h1" style="font-size:30px;font-weight:bolder ; font-family:Constantia;padding-top:20px; text-align:center">Sign up</p> 
+   
+         @using (Html.BeginForm("ShowAllColleges","admin",FormMethod.Post )){
+            <table style:"align:center" cellpadding="10" >
+ 
+            <!----- Admin Name ---------------------------------------------------------->
+            <tbody><tr>
+            <td> <label  style="font-family:Constantia;margin-left:20px"> Name</label></td>
+            <td> @Html.TextBoxFor(m=>m.Name, new{ @class="form-control",placeholder="nazi",type="text"})   
+             </td>
+                
+            </tr>
+           
+
+             <!----- Email---------------------------------------------------------->
+            <tr>
+               
+            <td><br />   <label style="font-family:Constantia;margin-left:20px"> Email:</label>  </td>
+            <td><br />  @Html.TextBoxFor(m=>m.Email,new{ @class="form-control",placeholder="abc" })
+             </td>
+            </tr>
+
+
+                 <!----- Password ---------------------------------------------------------->
+            <tr>
+               
+            <td><br />   <label style="font-family:Constantia;margin-left:20px"> Password</label>  </td>
+            <td><br />  @Html.TextBoxFor(n=>n.Password ,new{ @class="form-control",placeholder="****",type="password"})
+             </td>
+            </tr>
+               
+           
+                </tbody>
+                </table>
+
+            <br />
+             <butto type="submit" style="margin-left:40px" class="btn btn-success" ><span class="glyphicon glyphicon-log-in"></span>Sign in</butto>
+          <button style="margin-left:20px"  type="reset" class="btn btn-warning" >Cancel</button>
+         }</div>
+        <br />  <br />
+        <br />  <br />
+        <br />  <br />
+    </div>
+  </body>

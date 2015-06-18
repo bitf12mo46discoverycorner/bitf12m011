@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scal[;pl,=1" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="~/Content/img/n.jpg" />
+}
+</head>
+    
+
+<body style="background-image:url(../../Content/img/bk6.jpg) ; background-attachment:fixed;background-repeat:round; width:inherit;fit-position:inherit" >
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgba(98, 212, 216, 0.51)">
+       <div class="container-fluid">
+          <!-- navbar header section -->
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+               <span class="sr-only"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+          </div>
+          <!-- navbar menu section -->
+          <div class="collapse navbar-collapse navbar-responsive-collapse">
+               <ul class="nav navbar-nav">
+                   
+                <li style="margin-left:0px"> <img  alt="m"  style="height:70px;width:130px;";  src="~/Content/img/f.png" /></li>
+               <li>   <a href="https://mail.google.com/mail/u/0/#inbox" rel="author">
+              <img  alt="m"  style="height:30px";  src="../../Content/themes/base/images/gm.png" /> </a> </li>
+            <li > <a    href="https://www.facebook.com/bitf12m011"; rel="author"> 
+                    <img  alt="m"  style="height:30px";  src="../../Content/themes/base/images/fb2.gif" /> </a></li>
+           <li>  <a href="https://twitter.com/NaziaSadiq11" ; rel="author" >
+                 <img  alt=""  style=" height:30px";  src="~/Content/img/tw.png"/> </a></li>
+                   
+                   <li  "><h3 style="font-family:Constantia;font-weight:bolder; color:white"> Future.com </h3></li>
+
+               </ul>
+
+               <!-- search form -->
+               <form class="navbar-form navbar-right" action="/Home/search_college" role="search">
+                <div class="input-group">
+                    <input type="text" style="border-top-left-radius:20px;border-bottom-left-radius:20px"  class="form-control" placeholder="Search College" name="serach"/>
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" type="submit" style=" border-bottom-right-radius:20px;border-top-right-radius:20px"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+             
+          </div>
+     </div>
+</nav>
+        
+       
+    <!---menu --->
+    <br /><br /> <br /><br /><br />
+    <div style="margin-left:200px">
+     <nav class="navbar navbar-fixed navbar-custom " style=" background-color: transparent;border-color:transparent"  role="navigation">
+            <div class="container-fluid">
+          <!-- navbar header section -->
+          <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+               <span class="sr-only"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+          </div>
+                  <div class="collapse navbar-collapse navbar-responsive-collapse">
+        
+            <ul class="nav navbar-nav" style="float:inherit">
+                  <!-- Logo set -->
+        
+                <li  style="background-color:#90ebe9; font-size:15px;font-family:Constantia ;font-weight:bold; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="/Home/Index" style="color:black;"><span class="glyphicon glyphicon-home">Home </span> </a></li>
+                <li style="background-color:#90ebe9; font-weight:bold;font-size:15px;font-family:Constantia;border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="/Home/sign_up" style="color:black;"><span class="glyphicon glyphicon-log-out">RegisterCollege</span></a></li>
+                 <li style="background-color:#90ebe9; font-size:15px;font-family:Constantia ;font-weight:bold; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="/home/about_us" style="color:black;font-weight:bold"><span class="glyphicon glyphicon-user">AboutUs</span></a></li>
+                <li style="background-color:#90ebe9; font-size:15px;font-family:Constantia ;font-weight:bold; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="~/home/contact_us" style="color:black;font-weight:bold"><span class="glyphicon glyphicon-eye-open">FeedBack</span></a></li>
+             <li class="dropdown"  style="background-color:#90ebe9; font-size:medium;font-family:Constantia ; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+               
+ <a class="dropdown-toggle" data-toggle="dropdown" href="/Home/college" style="color:black ; resize:horizontal ">Select College<span class="caret"> </span></a>
+ <!--select list--->
+     <ul class="dropdown-menu" role="menu">
+ <li><a   style="color:darkolivegreen;  font-family:Forte; font-size:15px" href="/home/college?ClgName=Government Girls College">Goverment Girls</a></li>
+<li><a style="color:darkolivegreen;  font-family:Forte; font-size: 15px" href="/home/college?ClgName=Goverment Boys">Goverment Boys</a></li>
+<li><a   href="~/home/college?ClgName=Private Girls College " style="color:darkolivegreen; font-family: Forte; font-size: medium">Private Girls </a></li>
+<li><a    href="~/home/college?ClgName=Private Boys College" style="color:darkolivegreen; font-family: Forte; font-size: medium">Private Boys</a></li>
+<li><a  href="~/home/college?ClgName=Private Co-Clg College" style="color:darkolivegreen; font-family: Forte; font-size: medium">Private Co-Clg</a></li> </ul> </li>
+                
+                <li style="background-color:#90ebe9; font-size:15px;font-family:Constantia ;font-weight:bold; font-weight:bold; border-bottom-left-radius:10px; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="~/home/ShowAllColleges" style="color:black;font-weight:bold">ShowColleges </a></li>
+ <li style="background-color:#90ebe9; border-bottom-left-radius:10px; font-size:15px;font-family:Constantia ;font-weight:bold; border-bottom-right-radius:10px; border-top-right-radius:10px; border-top-left-radius:10px; border-bottom-color:black">
+                    <a href="~/Home/sign_in" style="color:black;font-weight:bold"><span class="glyphicon glyphicon-log-in">LogIn </span></a></li>
+               
+                 </ul></div>
+            </div>
+        </nav>
+ </div>
+      @RenderBody();
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+            <footer style="background-color:rgba(73, 195, 199, 0.51); border:double; border-color:midnightblue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 footer-box wow fadeInUp">
+                        <h4 style="color:indigo ;font-family:Constantia"><b>About Us</b></h4>
+                        <div class="footer-box-text">
+	                        <p style="color:white;font-family:Constantia">
+	                        	
+                "This is the site which contain information about all the colleges of Pakistan.
+                                The site will help those Students who want to take admision in Colleges according to their Marks.
+	                        </p>
+	                        
+                        </div>
+                    </div>
+                    
+                    
+        
+                    <div class="col-sm-3 footer-box wow fadeInDown">
+                       
+                    </div>
+                    <div class="col-sm-3 footer-box wow fadeInUp">
+                        
+                    </div>
+                    <div class="col-sm-3 footer-box wow fadeInDown">
+                        <h4 style="color:indigo;font-family:Constantia"><b>Contact Us </b></h4>
+                        <div class="footer-box-text footer-box-text-contact">
+	                        <p style="color:white;font-family:Constantia"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Address: Punjab University College of Information Technology, Allama Iqbal, Old Campus, The Mall road, Lahore</p>
+	                       
+	                        <p style="color:white"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp; Email: bitf12m011@pucit.edu.pk</p>
+                        </div>
+                                        <a    href="https://www.facebook.com/bitf12m011";  style="color:indigo ;font-weight:bold" rel="author"> Follow me
+                    <img  style="height:20px" alt="m"   src="/Content/img/facebook_40x40.png" /> </a>
+             <a href="https://twitter.com/NaziaSadiq11"  rel="author"  style="color:indigo;font-weight:bold">Follow me
+                 <img  alt="m"  style="height:20px"  src="/Content/img/twitter-b_40x40.png"/> </a>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-sm-12 wow fadeIn">
+                		<div class="footer-border"></div>
+                	</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 footer-copyright wow fadeIn">
+                    </div>
+                    <div class="col-sm-5 footer-social wow fadeIn">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+      <div class="container" style=" height:25px;width:inherit;background-color:rgba(0, 0, 0, 0.75)"> 
+                   <h5 style="color: white; font-family:Constantia; font-size:medium">
+                        CopyRight ©  @DateTime.Now.Year - All rights reserved by
+                <a href="https://mail.google.com/mail/u/0/#inbox" rel="author">Bitf12m011@pucit.edu.pk 
+              <img  alt="m"  style=" height:20px";  src="../../Content/themes/base/images/gm.png" /> </a>
+                <a    href="https://www.facebook.com/bitf12m011"; rel="author"> 
+                    <img  style="height:20px" alt="m"   src="../../Content/themes/base/images/fb2.gif" /> </a>
+             <a href="https://twitter.com/NaziaSadiq11" ; rel="author" >
+                 <img  alt="m"  style="height:20px";  src="~/Content/img/tw.png"/> </a>
+                &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              Design &Develop by &nbsp &nbsp Nazia Sadiq</h5></div>
+    
+</body></html>

@@ -1,0 +1,147 @@
+﻿
+<h2>updation</h2>
+@{
+    ViewBag.Title = "UpdateCollege";
+    Layout = "~/Views/Shared/layout2.cshtml";
+}
+@model term_project_ead.Models.Subject
+<div class="row">
+
+   
+
+            <h1 style="color:black; font-size:3em; font-weight:bold; font-family:Georgia; margin-left:20px">Update College </h1>
+           <br /><div style="text-align:center">
+
+<form action="~/admin/saveUpdated" method="post">
+
+     <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen;margin-left:100px; table-layout:fixed;border-bottom-left-radius:15px;width:500px;
+              border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;border-color:midnightblue">
+         
+           
+      <tbody>
+            <h1 style="font-size:medium;font-family:Constantia;text-align:center;width:1000px; font-weight:bolder;font-size:2em">College Details</h1>
+     
+          <tr style="width:300px" > <td><label style="font-family:Constantia;font-size:medium">College Name </label></td>
+           
+           <td>@Html.TextBoxFor(m=>m.College.ClgName,new{ placeholder="abc" , @class="form-Control" ,value="@Model.College.ClgName"} )</td>
+
+            </tr>
+            <!----- Address ---------------------------------------------------------->
+            <tr style="width:300px">
+               
+            <td><br />   <label style="font-family:Constantia;font-size:medium">    Address</label>  </td>
+            <td><br /> @Html.TextBoxFor(m=>m.College.Location ,new{ placeholder="xyz" , @class="form-Control"  ,value="@Model.College.Location"} )
+             </td>
+            </tr>
+
+                 <!----- city ---------------------------------------------------------->
+            <tr style="width:300px">
+            <td><br />  <label style="font-family:Constantia;font-size:medium">City</label></td>
+            <td><br />@Html.TextBoxFor(m=>m.College.City,new{ placeholder="LC"   , @class="form-Control",value="@Model..College.City"} )  <br />   
+             </td>
+                
+            </tr>
+                <!----- Password---------------------------------------------------------->
+            <tr style="width:300px">>
+            <td><br /> <label style="font-family:Constantia;font-size:medium"> Password </label></td>
+            <td><br />  @Html.TextBoxFor(m=>m.College.Password,new{ placeholder="LC"  , @class="form-Control" ,value="@Model.College.Password"}) <br />   
+             </td>
+                
+            </tr>
+                 <!----- Cetegory ---------------------------------------------------------->
+            <tr style="width:300px">>
+                
+            <td><br /> <label style="font-family:Constantia;font-size:medium"> Cetegory</label>  </td>
+            <td><br /> @Html.DropDownListFor(m=>m.College.Category , new SelectList(
+                new List<object>{ 
+                       "Government Girls College "  ,
+                       "Government Boys College" ,
+                       "Private Girls College",
+                       "Private Boys College "  ,
+                       "Private Co-College" 
+                    }, new {placeholder="lc",   @class="form-control"}))
+               
+             </td>
+            </tr>
+              </tbody></table>
+    <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen;margin-left:100px; table-layout:fixed;border-bottom-left-radius:15px;width:1100px;
+              border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;border-color:midnightblue">
+         
+           
+      <tbody>
+              <h1 style="font-size:medium;font-family:Constantia;text-align:center;width:1000px; font-weight:bolder;font-size:2em">Update Merit List</h1>
+     
+ <tr>
+<td style="text-align:center ; font-family:Batang"><b>Sl.No.</b></td>
+<td style="text-align:center ; font-family:Batang"><b>Degree</b></td>
+<td style="text-align:center ; font-family:Batang"><b>Highest Score</b></td>
+<td style="text-align:center; font-family:Batang"><b>Average Score</b></td>
+<td style="text-align:center; font-family:Batang"><b>Lowest Score</b></td>
+<td style="text-align:center; font-family:Batang"><b>Fees Per Year</b></td>
+</tr>
+ 
+<tr>
+<td>1</td>
+<td>Fsc(pre engg)</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Eng_Max ,new{ value="@Model.Fsc_Eng_Max" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Eng_Avg  ,new{ value="@Model.Fsc_Eng_Avg" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Eng_Min ,new{ value="@Model.Fsc_Eng_Min" , @class="form-Control"})</td>
+ <td>  @Html.TextBoxFor(m=> m.Fsc_Eng_Fee  ,new{ value="@Model.s.Fsc_Eng_Fee" , @class="form-Control"})
+    </td>
+</tr>
+ 
+<tr>
+<td>2</td>
+<td>Fsc(pre medical)</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Med_Max,new{ value="@Model.Fsc_Med_Max" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Med_Avg ,new{ value="@Model.Fsc_Med_Avg" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Med_Min ,new{ value="@Model.Fsc_Med_Min" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fsc_Med_Fee ,new{ value="@Model.Fsc_Med_Fee" , @class="form-Control"})</td>
+</tr>
+ 
+<tr>
+<td>3</td>
+<td>Icom</td>
+<td>@Html.TextBoxFor(m=> m.Icom_Max,new{ value="@Model.Icom_Max" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Icom_Avg ,new{value="@Model.Icom_Avg" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Icom_Min ,new{ value="@Model.Icom_Min" , @class="form-Control"})</td>
+    <td>@Html.TextBoxFor(m=>m.Icom_Fee,new{ value="@Model.Icom_Fee" , @class="form-Control"})</td>
+</tr>
+ 
+<tr>
+    <td>4</td>
+<td>ICS</td>
+
+<td>@Html.TextBoxFor(m=> m.Ics_Max ,new{ value="@Model.Ics_Max" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Ics_Avg ,new{ value="@Model.Ics_Avg " , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Isc_Min ,new{ value="@Model.Isc_Min " , @class="form-Control"})</td>
+    <td>@Html.TextBoxFor(m=> m.Ics_Fee ,new{ value="@Model.Ics_Fee" , @class="form-Control"})</td>
+</tr>
+
+     
+<tr>r>
+
+    <tr>
+    <td>5</td>
+<td>FA</td>
+<td>@Html.TextBoxFor(m=> m.Fa_Max,new{ value="@Model.Fa_Max" , @class="form-Control"}) </td>
+<td>@Html.TextBoxFor(m=> m.Fa_Avg ,new{ value="@Model.Fa_Avg" , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fa_Min ,new{  value="@Model.Fa_Min " , @class="form-Control"})</td>
+<td>@Html.TextBoxFor(m=> m.Fa_Fee ,new{  value="@Model.Fa_Fee" , @class="form-Control"})</td>
+</tr>
+              
+     </tbody> </table>
+    <h1 style="font-size:medium;font-family:Constantia;margin-left:10px;width:700px; font-weight:bolder;font-size:2em">Description</h1>
+   <tr> @Html.TextAreaFor(m=>m.College.Description, new { value="@Model.College.Description" ,rows="5",cols="45"})</tr>
+           
+        <h1 style="font-size:medium;font-family:Constantia;margin-left:10px;width:700px; font-weight:bolder;font-size:2em">Change Image</h1>
+  
+     <input type="file" style="margin-left:20px" name="img" multiple/>
+      <button style="margin-left:800px "  type="submit" class="btn btn-success" >Update</button>
+             <button style="margin-left:50px " type="reset" class="btn btn-warning" >Cancel</button>
+                    </form>
+     </div>
+    </div>
+

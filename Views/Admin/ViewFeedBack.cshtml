@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ViewFeedBack";
+    Layout = "~/Views/Shared/layout2.cshtml";
+}
+
+@model List<term_project_ead.Models.GetInTouch>
+<br /><br /><br />
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+ <div style="float:left;width:50%" >
+        <div style="border:thick;background-color:#dbadad"></div>
+                @foreach (var p in Model)
+                {
+                   <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen; table-layout:fixed;border-bottom-left-radius:15px;
+              border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;border-color:midnightblue;width:1100px"> 
+            <tbody>
+                <tr>
+
+                    <td><label> Name </label></td>
+                    <td><label> Email </label></td>
+                    <td ><label>Message</label></td>
+                     <td><label> Action</label></td>
+                    
+
+                </tr>
+                    <tr style="height:20%;color:white;">
+                        <td >@p.Name</td>
+                        <td>@p.Email</td>
+                        <td class="fa-usd"style="width:300px">@p.Comment</td>
+                        <td><a href="/Admin/DeleteFed?id=@p.Email";style="color:#dc259f;font-weight:bold">Delete</a></td>
+                      </tr> 
+                </tbody> 
+                       </table> 
+                }
+          
+    </div>
+        </div>
+    </div>
+
+
+
+<br /><br /><br />

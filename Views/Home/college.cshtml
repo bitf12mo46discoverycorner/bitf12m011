@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "college";
+}
+
+<head>
+     <title>Select College</title>
+     <script src="../../Content/jquery-1.8.0.js"></script>
+        <script>
+            function f1() {
+
+                var a = document.getElementById("marks");
+                var b = document.getElementById("city");
+
+
+                if (b.value == "") {
+                    $("#message1").text("Please enter city for any result");
+                }
+                if (a.value == "") {
+
+                    $("#message2").text("Plese enter marks for any result");
+                }
+            }
+            function f2() {
+
+                $("#message1").text("")
+                $("#message2").text("")
+            }
+        </script>
+</head>
+ 
+    <body>
+    
+    <div id="college_data" class="container" >
+
+        <p class="h1" style="font-size:3em ; font-family:Constantia ; color:black; text-align: center">@ViewBag.name</p> 
+       <br /><br />
+        <div class="" style="background-color:rgba(213, 138, 138, 0.59);margin-left:300px; width:400px;height:400px ;margin-right:300px;border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px">
+        <form action="/home/serach" method="post">          
+            <table style:"align:center" cellpadding="10" >
+ 
+            <!----- Domain---------------------------------------------------------->
+            <tbody><tr>
+            <td><label aria-required="true" style="font-family:Constantia ;padding-left:30px; padding-top:50px;color:black; ">Select Domain </label></td>
+            <td><select name="domain" class="form-control">
+                <option>
+                   FSC(pre engg)
+                </option>
+                 <option>
+                   FSC(pre medical)
+                </option>
+                 <option>
+                   Icom
+                </option>
+                 <option>
+                    Ics
+                </option>
+                <option>
+                    FA
+                </option>
+                       </select>  
+             </td>
+                
+            </tr>
+                   <!----- city ---------------------------------------------------------->
+            <tr>
+            <td><br />  <label style="font-family:Constantia ;padding-left:30px; color:black">City </label></td>
+            <td><br /><input type="text" placeholder="lahore" name="city"/>  <br />   
+             </td>
+                
+            </tr>
+            
+
+              
+                <!----- Fees---------------------------------------------------------->
+            <tr>
+            <td><br /> <label aria-required="true" style="font-family:Constantia ;padding-left:30px; color:black;">Fees Limit </label></td>
+            <td><br />  <input type="text" placeholder="123" name="fees"/>  <br />   
+             </td>
+                
+            </tr>
+
+                <!----- Marks---------------------------------------------------------->
+            <tr>
+            <td><br /> <label aria-required="true" style="font-family:Constantia ; padding-left:30px;color:black; ">Marks </label></td>
+            <td><br />  <input type="text" placeholder="123" name="marks"/>  <br />   
+             </td>
+                
+            </tr>
+               
+           
+                </tbody>
+                </table>
+             <br />
+             <br />
+             <button style="margin-left:20px" class="btn btn-success" onmouseout="f2()" onmouseover="f1()">Show Result</button>
+             <button  style="margin-left:50px"  class="btn btn-warning" >Cancel</button>
+            </form>  <p style="font-size:larger ; margin-left:30px ;color:lightgoldenrodyellow"><b> All fields are required </b> </p>
+       
+        </div>
+    </div>
+    <br />
+    
+</body>
+

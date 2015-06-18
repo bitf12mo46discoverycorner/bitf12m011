@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "contact_us";
+}
+@model term_project_ead.Models.GetInTouch
+
+
+
+     <div  class="container" >  
+  
+       <p class="h1" style="font-size:50px ; font-family:Constantia;color:white;margin-left:20px">FeedBack</p> 
+        <br />
+         <div class="row">
+     <div class="col-md-6">
+         
+        <!--Using Html Helpers-->
+         <div style="border:thick;background-color:rgba(238, 222, 186, 0.86);padding-left:50px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;border-top-left-radius:15px;border-top-right-radius:15px;">
+        @using (Html.BeginForm("Feedback", "Home", FormMethod.Post))
+        {
+        @Html.ValidationSummary(true)
+<br /><br />
+                <h1 style="text-decoration-color:palegoldenrod;color:black; font-weight:bold;rotation:inherit;font-family:Constantia;font-size:30px">GET IN Touch</h1>
+                <div class="form-group ";style="padding-left:200px">
+                    <!--<label for="InputName" style="font-size:15px; color:red">Enter Name</label>-->
+                    <!--@Html.Label("Enter Name", "Enter Name", new { style="color:black"})-->
+                        @Html.LabelFor(m=>m.Name, new { style="color:black"})
+                    <div class="input-group"> 
+                        
+                        @Html.TextBoxFor(m=>m.Name,new { placeholder = "abc", @class="form-control"})
+                       
+                    </div>
+                    @Html.ValidationMessageFor(m=>m.Name)
+                    <div class="form-group">
+                    <!--<label for="InputEmail" style="font-size:15px; color:red">Enter Email</label>-->
+                        <!--@Html.Label("Enter Email", "Enter Email", new { style="color:black",type="email"})-->
+                        
+                              @Html.LabelFor(m=>m.Email, new { style="color:black"})
+                    <div class="input-group">
+                        
+                        @Html.TextBoxFor(m=>m.Email,new {Type="Email", placeholder = "abc@gmail.com", @class="form-control"})
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(m=>m.Email)
+                     <div class="form-group">
+                    <!--<label for="InputMessage" style="font-size:15px; color:red">Your Feedback</label>-->
+                       <!--  @Html.Label("Your Feedback", "Your Feedback", new { style="color:black"})-->
+                           @Html.LabelFor(m=>m.Comment, new { style="color:black"})
+                    <div class="input-group">
+                        @Html.TextArea("Comment","",new { placeholder = "feedback", @class="form-control"})
+                    </div>
+                </div>
+               @Html.ValidationMessageFor(m=>m.Comment)
+                  <h4 style="color:wheat"> <span class="glyphicon glyphicon-asterisk"></span>All Fields are Required </h4> 
+        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right ">
+         <input type="submit" name="submit" id="submi" value="Cancel" class="btn btn-warning pull-right ">
+
+                    <br /><br />
+                    </div>
+        }
+         </div>
+             </div>
+             <div class="col-md-6">
+                       <img  style="height:450px;width:300px;padding-left:30px"  src="~/Content/img/contactus_icon.png" class="img-responsive"/>
+  
+             </div>
+             </div>
+     </div>
+        <br /><br />
+
+   <br /><br />
+   <br /><br />
+   <br /><br />
+

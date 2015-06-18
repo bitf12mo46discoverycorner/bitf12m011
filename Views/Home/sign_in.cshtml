@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "sign_in";
+}
+
+<head>
+    
+    <title style="color:red" >Sign in</title>
+
+
+</head>
+
+<body id="bg" style="background-image:url(../../Content/themes/base/images/project_background.jpg) ; background-repeat:round">
+    
+     <div id="sign_in_data"  class="container" >
+         <div class="container">
+            <div style="border:thick;background-color:rgba(24, 129, 133, 0.71);margin-left:300px;
+       border-bottom-right-radius:15px;border-bottom-left-radius:15px;border-top-left-radius:15px;height:400px;width:400px;border-top-right-radius:15px;">
+      <p class="h1" style="font-size:30px;font-weight:bolder ; font-family:Constantia;padding-top:20px; text-align:center">Sign in</p> 
+       <br /><br />
+        <form  action="~/home/validateCollege">
+            <table style:"align:center" cellpadding="10" >
+ 
+            <!----- College Name ---------------------------------------------------------->
+            <tbody><tr>
+            <td><label  style="font-size:20px;margin-left:20px ; font-family:Constantia"> College Name: </label></td>
+            <td> <input type="text" placeholder="abc" name="collegeName"/>    
+             </td>
+                
+            </tr>
+            <!----- Password ---------------------------------------------------------->
+            <tr>
+               
+            <td><br />   <label style="font-size:20px; margin-left:20px ; font-family:Constantia "> Password:</label>  </td>
+            <td><br />  <input type="password" placeholder="****" name="password"/>
+             </td>
+            </tr>
+                </tbody>
+                </table>
+
+            <br /><br />
+             <button style="margin:10px 0 0 50px"  type="submit" class="btn btn-success" >Sign in</button>
+          <button style="margin:20px 0 0 60px"  type="reset" class="btn btn-warning" >Cancel</button>
+     
+            </form> </div></div>
+        <br />  <br />
+        <br />  <br />
+        <br />  <br />
+    </div>
+   
+</body>

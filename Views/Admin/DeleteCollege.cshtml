@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "delete";
+
+   Layout = "~/Views/Shared/layout2.cshtml";
+}
+
+
+
+    <head>
+        @model List<term_project_ead.Models.College>
+        <title>Delete</title>
+    </head>
+<div class="row">
+   
+<p class="h1" style="font-size:100px ; font-family:Batang ; text-align:center">Delete College</p> 
+    <br />
+
+    <div style="text-align:center">
+   <form action="~/admin/delete" method="post">
+    <table>
+        <tbody>
+         <tr>
+        <td>
+      <label style="font-family:Constantia ; font-size:x-large ;max-width:20px; margin-left:230%" > College Name</label>
+</td>
+     <td>
+<select name="Name" class="form-control" style="margin-left:250%">
+     @for(int i = 0 ; i < Model.Count ; i++)
+     {
+                <option>
+                    @Model.ElementAt(i).ClgName           
+                     
+                </option>     
+     }
+     </select></td> 
+
+      </tr>
+        
+            </tbody>
+         </table>
+    <br />
+    <br />
+     <button type="submit" class="btn btn-success" >Detele</button>
+             <button style="margin-left:20px " type="reset" class="btn btn-warning" >Cancel</button>
+     
+
+       </form>   
+        </div>
+     </div>

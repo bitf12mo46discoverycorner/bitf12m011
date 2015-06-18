@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "CollegeList";
+}
+@model List<term_project_ead.Models.Subject>
+
+
+
+    <div id="college_lists_data" class="container" >
+     
+      <h1 style="color:black; font-size:3em; font-weight:bold; font-family:Georgia; margin-left:20px">College List </h1>
+          
+        <p class="h2" style="font-size:20px; color:black;font-weight:bold; font-family:Georgia; margin-left:20px">@ViewBag.domain</p> 
+       <br /><br />
+         <table  style:"align:center" cellpadding="10" style="border:double" class="table table-striped">
+ 
+           <tbody>
+                <tr>
+                <td><label style="font-size:20px; color:black;font-weight:bold; font-family:Georgia; margin-left:20px">College Name</label></td>
+                <td><label style="font-size:20px; color:black;font-weight:bold; font-family:Georgia; margin-left:20px">College Address </label></td>
+                <td><label style="font-size:20px; color:black;font-weight:bold; font-family:Georgia; margin-left:20px">Details </label></td>
+                </tr>
+                @foreach(term_project_ead.Models.Subject col in Model)
+                {
+                    <tr>
+                        <td>
+                            @col.College.ClgName
+                        </td>
+                        <td>
+                            @col.College.Location
+                        </td>
+                        <td>
+                           <a href="/home/get_college_data/@col.SId">Show</a>
+                        </td>
+                    </tr>   
+                }
+                                                
+            </tbody>
+            </table>
+           
+        
+    </div>

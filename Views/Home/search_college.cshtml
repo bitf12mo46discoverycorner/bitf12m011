@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "search_college";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+
+
+    @model term_project_ead.Models.Subject
+   
+    <div id="college_detail_data"class="container " style="border:groove;border-bottom-color:fuchsia;background-image:url('~/Content/img/edu.jpg')">
+ 
+       <p class="h1" style="font-size:40px ; font-family:Constantia ; text-align:center">@Model.College.ClgName</p> 
+    
+         <img style="margin-left:100px;flex-item-align:center ; width:80% ; height:50%" src="@Model.College.picture" />
+        <br /><br /><h3 class="h3" style="font-size:35px ; font-family:Constantia " >Description</h3> <br/><br/>
+    
+        <p  style="font-size:medium ; font-family:Constantia;font-weight:600">@Model.College.Description</p>
+
+              <br />
+    <br />
+<table class="table table-bordered " style="background-color:olive">
+ <br /><h3 class="h3" style="font-size:35px ; font-family:Constantia " >Merit List</h3> <br/>
+    
+<tbody><tr >
+<td style="font-size:20px ;color:white;font-family:Constantia"><b>SB.No.</b></td>
+<td style="text-align:center ;color:white ;font-size:20px ; font-family:Constantia "><b>Degree</b></td>
+<td style="text-align:center ;font-size:20px ; color:white; font-family:Constantia"><b>Highest Score</b></td>
+<td style="text-align:center; font-size:20px ; font-family:Constantia ;color:white"><b>Average Score</b></td>
+<td style="text-align:center;font-size:20px ;color:white; font-family:Constantia"><b>Lowest Score</b></td>
+<td style="text-align:center; font-size:20px ; color:white;font-family:Constantia"><b>Fees Per Year</b></td>
+</tr>
+ 
+<tr>
+<td style="font-size:20px ;color:white;font-family:Constantia">1</td>
+<td style="font-size:20px ;color:white;font-family:Constantia">Fsc(pre engg)</td>
+<td><input type="text" name="fsc_engg_highest"; maxlength="30" value="@Model.Fsc_Eng_Max"/></td>
+<td><input type="text" name="fsc_engg_average" maxlength="30" value="@Model.Fsc_Eng_Avg"/></td>
+<td><input type="text" name="fsc_engg_lowest" maxlength="30" value="@Model.Fsc_Eng_Min"/></td>
+    <td><input type="text" name="fsc_engg_fee" maxlength="30" value="@Model.Fsc_Eng_Fee"/></td>
+</tr>
+ 
+<tr>
+<td style="font-size:20px ;color:white;font-family:Constantia">2</td>
+<td style="font-size:20px ;color:white;font-family:Constantia">Fsc(pre medical)</td>
+<td><input type="text" name="fsc_medical_highest" maxlength="30" value="@Model.Fsc_Med_Max"/></td>
+<td><input type="text" name="fsc_medical_average" maxlength="30"  value="@Model.Fsc_Med_Avg"/></td>
+<td><input type="text" name="fsc_medical_lowest" maxlength="30"  value="@Model.Fsc_Med_Min"/></td>
+    <td><input type="text" name="fsc_medical_fee" maxlength="30"  value="@Model.Fsc_Med_Fee"/></td>
+</tr>
+ 
+<tr>
+<td style="font-size:20px ;color:white;font-family:Constantia">3</td>
+<td style="font-size:20px ;color:white;font-family:Constantia">Icom</td>
+<td><input type="text" name="icom_hieghest" maxlength="30"  value="@Model.Icom_Max"/></td>
+<td><input type="text" name="icom_aversge" maxlength="30" value="@Model.Icom_Avg"/></td>
+<td><input type="text" name="icom_lowest" maxlength="30" value="@Model.Icom_Min"/></td>
+    <td><input type="text" name="icom_fee" maxlength="30" value="@Model.Icom_Fee"/></td>
+</tr>
+ 
+<tr>
+    <td style="font-size:20px ;color:white;font-family:Constantia">4</td>
+<td style="font-size:20px ;color:white;font-family:Constantia">ICS</td>
+
+<td><input type="text" name="ics_hieghest" maxlength="30" value="@Model.Ics_Max"/></td>
+<td><input type="text" name="ics_aversge" maxlength="30" value="@Model.Ics_Avg"/></td>
+<td><input type="text" name="ics_lowest" maxlength="30" value="@Model.Isc_Min"/></td>
+    <td><input type="text" name="ics_fee" maxlength="30" value="@Model.Ics_Fee"/></td>
+</tr>
+
+     
+<tr>
+    <td style="font-size:20px ;color:white;font-family:Constantia">5</td>
+<td style="font-size:20px ;color:white;font-family:Constantia">FA </td>
+<td><input type="text" name="gs_highest" maxlength="30" value="@Model.Fa_Max"/></td>
+<td><input type="text" name="gs_average" maxlength="30" value="@Model.Fa_Avg"/></td>
+<td><input type="text" name="gs_lowest" maxlength="30" value="@Model.Fa_Min"/></td>
+<td><input type="text" name="gs_fee" maxlength="30" value="@Model.Fa_Avg"/></td>
+</tr>
+
+   
+                </tbody>
+                </table>
+    </div>

@@ -1,0 +1,192 @@
+﻿@{
+    ViewBag.Title = "update_college_data_after_login";
+}
+@model term_project_ead.Models.ModelView
+<head><title></title>
+
+    @Scripts.Render("~/bundles/jquery");
+     @Scripts.Render("~/bundles/jqueryui");
+     @Scripts.Render("~/bundles/jqueryval");
+</head>
+
+<body id="bg" style="background-image:url(../../Content/themes/base/images/project_background.jpg) ; background:fixed" >
+    <div id="container">
+        <h1 style="color:black; font-size:3em; font-weight:bold; text-align:center; font-family:Georgia; margin-left:20px">Register Colleges </h1>
+          
+        <div style="border:none;width:1000px;">
+           <h1 style="font-size:medium;font-family:Constantia;margin-left:20px;width:700px; font-weight:bolder;font-size:2em">Add Colleges Details</h1>
+  
+         @using (Html.BeginForm("saveUpdatedData", "Home", FormMethod.Post, new { enctype = "multipart/form-data", }))
+         {
+                @Html.ValidationSummary(true)
+      <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen;margin-left:100px; table-layout:fixed;border-bottom-left-radius:20px;width:500px;
+              border-bottom-right-radius:20px;border-top-left-radius:20px;border-top-right-radius:20px;border-color:midnightblue">
+         
+            <!----- College Name ---------------------------------------------------------->
+            <tbody><tr>
+                  @Html.ValidationMessageFor(m => m.c.ClgName)
+            <td><label style="font-family:Constantia;font-size:medium"> College Name </label> </td>
+           <td > @Html.EditorFor(a => a.c.ClgName, new { @class = "form-control", placeholder = "Punjab College", id = "UserName" })
+                 <input type="button" id="b1" value="Check" />
+            </td>
+                    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#b1').click(function () {
+
+                var userName = $('#UserName').val();
+
+                //alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/home/CheckUserName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+
+                        $('#result').text("User Name is available");
+
+                    }
+                    else {
+                        $('#result').text("User already exists in database");
+                    }
+                });
+
+            });
+
+        });</script>
+            
+            <!----- Address ---------------------------------------------------------->
+            <tr>
+               @Html.ValidationMessageFor(m => m.c.Location)
+            <td><br />  <label style="font-family:Constantia;font-size:medium">   Location</label>  </td>
+            <td><br />  @Html.TextBoxFor(b => b.c.Location, new { @class = "form-control", placeholder = "abc", name = "location" })
+             </td>
+            </tr>
+
+                 <!----- city ---------------------------------------------------------->
+            <tr>
+                 @Html.ValidationMessageFor(m => m.c.City)
+            <td><br />  <label style="font-family:Constantia;font-size:medium">City </label></td>
+            <td><br />  @Html.TextBoxFor(b => b.c.City, new { @class = "form-control", placeholder = "abc", name = "city" })
+                
+             </td>
+                
+            </tr>
+                <!----- Password---------------------------------------------------------->
+            <tr>
+            <td><br /> <label style="font-family:Constantia;font-size:medium">Password </label></td>
+            <td><br />  @Html.PasswordFor(n => n.c.Password, new { @class = "form-control", placeholder = "***", name = "password" }) 
+             </td>
+                
+            </tr>
+                 <!----- Cetegory ---------------------------------------------------------->
+            <tr>
+                
+            <td><br /><label style="font-family:Constantia;font-size:medium"> Cetegory</label>  </td>
+            <td><br />
+                @Html.DropDownListFor(a => a.c.Category, new SelectList(
+                new List<object>{
+                    "Government Girls College "  ,
+                       "Government Boys College" ,
+                       "Private Girls College",
+                       "Private Boys College "  ,
+                       "Private Co-College" 
+                }, new { placeholder = "lc", @class = "form-control" }))
+             </td>
+            </tr>
+       </tbody> </table>
+                   
+     <h1 style="font-size:medium;font-family:Constantia;margin-left:100px;width:700px; font-weight:bolder;font-size:2em">Add Merit List</h1>
+  
+                <table class="table table-responsive table-bordered table-condensed table-striped"
+             style="background-color:lightseagreen;margin-left:100px; table-layout:fixed;border-bottom-left-radius:20px;width:1000px;
+              border-bottom-right-radius:20px;border-top-left-radius:20px;border-top-right-radius:20px;border-color:midnightblue">
+         
+ 
+<tbody>
+    <tr>
+   
+<td style="text-align:center ;font-size:20px; font-family:Constantia"><b>Sl.No.</b></td>
+<td style="text-align:center ; font-size:20px;font-family:Constantia"><b>Degree</b></td>
+<td style="text-align:center ; font-size:20px;font-family:Constantia"><b>Highest Score</b></td>
+<td style="text-align:center; font-size:20px;font-family:Constantia"><b>Average Score</b></td>
+<td style="text-align:center; font-size:20px;font-family:Constantia"><b>Lowest Score</b></td>
+<td style="text-align:center; font-size:20px;font-family:Constantia"><b>Fees Per Year</b></td>
+</tr>
+    <tr>
+    <td style="font-family:Constantia;font-size:medium">1</td>
+<td style="font-size:20px; font-family:Constantia">Fsc(pre engg)</td>
+<td> @Html.TextBoxFor(m => m.s.Fsc_Eng_Max, new { @class = "form-control", name = "Fsc_Eng_Max" }) </td>
+<td> @Html.TextBoxFor(m => m.s.Fsc_Eng_Min, new { @class = "form-control", name = "Fsc_Eng_Min" })</td>
+<td> @Html.TextBoxFor(m => m.s.Fsc_Eng_Avg, new { @class = "form-control", name = "Fsc_Eng_Avg" })</td>
+    <td> @Html.TextBoxFor(m => m.s.Fsc_Eng_Fee, new { @class = "form-control", name = "Fsc_Eng_Fee" })</td>
+</tr>
+    <tr>
+<td style="font-family:Constantia;font-size:medium">2</td>
+<td style="font-family:Constantia;font-size:medium">Fsc(pre medical)</td>
+<td>@Html.TextBoxFor(m => m.s.Fsc_Med_Max, new { @class = "form-control", name = "Fsc_Med_Max" })</td>
+<td>@Html.TextBoxFor(m => m.s.Fsc_Med_Avg, new { @class = "form-control", name = "Fsc_Med_Avg" })</td>
+<td>@Html.TextBoxFor(m => m.s.Fsc_Med_Min, new { @class = "form-control", name = "Fsc_Med_Min" })</td>
+<td>@Html.TextBoxFor(m => m.s.Fsc_Med_Fee, new { @class = "form-control", name = ".Fsc_Med_Fee" })</td>
+</tr>
+ 
+<tr>
+<td style="font-family:Constantia;font-size:medium">3</td>
+<td style="font-family:Constantia;font-size:medium">Icom</td>
+<td>@Html.TextBoxFor(m => m.s.Icom_Max, new { @class = "form-control", name = "Icom_Max" })</td>
+<td>@Html.TextBoxFor(m => m.s.Icom_Avg, new { @class = "form-control", name = "Icom_Avg" })</td>
+<td>@Html.TextBoxFor(m => m.s.Icom_Min, new { @class = "form-control", name = "Icom_Min" })</td>
+    <td>@Html.TextBoxFor(m => m.s.Icom_Fee, new { @class = "form-control", name = "Icom_Fee" })</td>
+</tr>
+ 
+<tr>
+    <td style="font-family:Constantia;font-size:medium">4</td>
+<td style="font-family:Constantia;font-size:medium">ICS</td>
+
+<td>@Html.TextBoxFor(m => m.s.Ics_Max, new { @class = "form-control", name = "Ics_Max" })</td>
+<td>@Html.TextBoxFor(m => m.s.Ics_Avg, new { @class = "form-control", name = "Ics_Avg " })</td>
+<td>@Html.TextBoxFor(m => m.s.Isc_Min, new { @class = "form-control", name = "Isc_Min " })</td>
+    <td>@Html.TextBoxFor(m => m.s.Ics_Fee, new { @class = "form-control", name = "Ics_Fee" })</td>
+</tr>
+
+  <tr>
+    <td style="font-family:Constantia;font-size:medium">5</td>
+<td style="font-family:Constantia;font-size:medium">FA</td>
+<td>@Html.TextBoxFor(m => m.s.Fa_Max, new { @class = "form-control", name = "Fa_Max" }) </td>
+<td>@Html.TextBoxFor(m => m.s.Fa_Avg, new { @class = "form-control", name = "Fa_Avg" })</td>
+<td>@Html.TextBoxFor(m => m.s.Fa_Min, new { @class = "form-control", name = "Fa_Min " })</td>
+<td>@Html.TextBoxFor(m => m.s.Fa_Fee, new { @class = "form-control", name = ".Fa_Fee" })</td>
+</tr>
+   
+   
+                </tbody>
+                </table>
+            <br /><br />
+           <div style="margin-left:100px"> <h1 style="font-size:medium;font-family:Constantia;margin-left:20px;width:700px; font-weight:bolder;font-size:2em">Description</h1>
+   <tr> @Html.TextAreaFor(m=>m.c.Description, new { value="@Model.c.Description" ,rows="5",cols="45"})</tr>
+       <h1 style="font-size:medium;font-family:Constantia;margin-left:20px;width:700px; font-weight:bolder;font-size:2em">Choose Image</h1>
+  
+            <br />
+            <input type="file" name="img" style="margin-left:20px ;color:white" multiple/>
+           
+             <button style="margin-left:650px "  type="submit" class="btn btn-success" >Update</button>
+             <button style="margin-left:50px " type="reset" class="btn btn-warning" >Cancel</button>
+              <a href="/home/sign_in">
+
+             <button style="margin-left:50px " type="button" class="btn btn-warning" >Logout</button> </a>
+     
+     <br /><br/></div>
+             
+         }
+        
+         
+        </div>
+    </div>
+        <br />  
+    
+   
+</body>
